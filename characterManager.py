@@ -15,3 +15,7 @@ class CharacterManager:
             if character.character_name == character.name:
                 return character
         return None
+    
+    def search_characters(self, attribute, value):
+        found_characters = [character for character in self.characters if getattr(character, attribute, None) == value]
+        return found_characters
